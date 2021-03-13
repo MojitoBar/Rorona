@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct CardView: View {
-    var user: UserProfile
+    var roronainfo: RoronaInfo
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                .fill(
+                    LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.04076000323, green: 0.2159992264, blue: 0.372004512, alpha: 1)), Color(#colorLiteral(red: 0.06490538184, green: 0.343952678, blue: 0.5923722519, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
                 .frame(width: 300, height: 200)
                 .padding()
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            Text(user.name)
+                .shadow(color: Color(#colorLiteral(red: 0.101288268, green: 0.1096670212, blue: 0.1218392683, alpha: 1)), radius: 5, x: 0, y: 0)
+            VStack(alignment: .leading){
+                Text(roronainfo.name)
+                    .font(.system(size: 35))
+                    .frame(width: 250, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .foregroundColor(.white)
+                Text(roronainfo.rule)
+                    .foregroundColor(.white)
+                Text(roronainfo.date)
+                    .foregroundColor(.white)
+                Spacer()
+            }
         }
     }
 }
 
 struct ContentView: View {
-    @ObservedObject var user = FetchUser()
+    @ObservedObject var roronainfo = FetchUser()
     
     init() {
         UITableView.appearance().separatorColor = .clear
@@ -39,8 +52,8 @@ struct ContentView: View {
                     .padding(.trailing, 30)
             }
             NoSepratorList{
-                ForEach(user.users){user in
-                    CardView(user: user)
+                ForEach(roronainfo.roronainfos){roronainfo in
+                    CardView(roronainfo: roronainfo)
                 }
             }
         }

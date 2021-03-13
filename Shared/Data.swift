@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct UserProfile: Codable, Identifiable{
+struct RoronaInfo: Codable, Identifiable{
     // ?
-    var id: String
+    var id: Int
     var name: String
-    var phone: String
-    var address: String
+    var rule: String
+    var date: String
 }
 
 class FetchUser: ObservableObject {
   // 1.
-  @Published var users = [UserProfile]()
+  @Published var roronainfos = [RoronaInfo]()
      
     init() {
-        let url = URL(string: "http://localhost:8080/user/all")!
+        let url = URL(string: "http://localhost:8080/roronainfo/all")!
         // 2.
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             do {
                 if let userData = data {
                     // 3.
-                    let decodedData = try JSONDecoder().decode([UserProfile].self, from: userData)
+                    let decodedData = try JSONDecoder().decode([RoronaInfo].self, from: userData)
                     DispatchQueue.main.async {
-                        self.users = decodedData
+                        self.roronainfos = decodedData
                     }
                 } else {
                     print("No data")

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7AF71D425FCFFEB001C1898 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71D125FCFEC4001C1898 /* NanumSquareOTF_acB.otf */; };
+		B7AF71D725FCFFEE001C1898 /* NanumSquareOTF_acR.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71CE25FCFEC3001C1898 /* NanumSquareOTF_acR.otf */; };
+		B7AF71D825FCFFEE001C1898 /* NanumSquareOTF_acEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71CF25FCFEC4001C1898 /* NanumSquareOTF_acEB.otf */; };
+		B7AF71D925FCFFEE001C1898 /* NanumSquareOTF_acL.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71D025FCFEC4001C1898 /* NanumSquareOTF_acL.otf */; };
 		B7EF41A225FA73AE00DA6ED7 /* roronaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF418F25FA73AD00DA6ED7 /* roronaApp.swift */; };
 		B7EF41A325FA73AE00DA6ED7 /* roronaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF418F25FA73AD00DA6ED7 /* roronaApp.swift */; };
 		B7EF41A425FA73AE00DA6ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF419025FA73AD00DA6ED7 /* ContentView.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7AF71CE25FCFEC3001C1898 /* NanumSquareOTF_acR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acR.otf; sourceTree = "<group>"; };
+		B7AF71CF25FCFEC4001C1898 /* NanumSquareOTF_acEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acEB.otf; sourceTree = "<group>"; };
+		B7AF71D025FCFEC4001C1898 /* NanumSquareOTF_acL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acL.otf; sourceTree = "<group>"; };
+		B7AF71D125FCFEC4001C1898 /* NanumSquareOTF_acB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acB.otf; sourceTree = "<group>"; };
 		B7EF418F25FA73AD00DA6ED7 /* roronaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roronaApp.swift; sourceTree = "<group>"; };
 		B7EF419025FA73AD00DA6ED7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,9 +58,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7AF71CD25FCFEB8001C1898 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B7AF71D125FCFEC4001C1898 /* NanumSquareOTF_acB.otf */,
+				B7AF71CF25FCFEC4001C1898 /* NanumSquareOTF_acEB.otf */,
+				B7AF71D025FCFEC4001C1898 /* NanumSquareOTF_acL.otf */,
+				B7AF71CE25FCFEC3001C1898 /* NanumSquareOTF_acR.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B7EF418925FA73AD00DA6ED7 = {
 			isa = PBXGroup;
 			children = (
+				B7AF71CD25FCFEB8001C1898 /* Fonts */,
 				B7EF418E25FA73AD00DA6ED7 /* Shared */,
 				B7EF419825FA73AE00DA6ED7 /* iOS */,
 				B7EF419F25FA73AE00DA6ED7 /* macOS */,
@@ -176,7 +196,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7AF71D725FCFFEE001C1898 /* NanumSquareOTF_acR.otf in Resources */,
+				B7AF71D925FCFFEE001C1898 /* NanumSquareOTF_acL.otf in Resources */,
+				B7AF71D825FCFFEE001C1898 /* NanumSquareOTF_acEB.otf in Resources */,
 				B7EF41A625FA73AE00DA6ED7 /* Assets.xcassets in Resources */,
+				B7AF71D425FCFFEB001C1898 /* NanumSquareOTF_acB.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

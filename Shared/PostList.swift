@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct PostList: View {
-    @ObservedObject var user = FetchUser()
+    @ObservedObject var roronainfo = FetchUser()
         var body: some View {
             VStack {
                 // 2.
-                List(user.users) { user in
+                List(roronainfo.roronainfos) { roronainfo in
                     VStack(alignment: .leading) {
                         // 3.
-                        Text(user.name)
-                        Text(user.phone)
-                        Text(user.address)
+                        Text(roronainfo.name)
+                        Text(roronainfo.rule)
+                        Text(roronainfo.date)
                     }
                 }
             }

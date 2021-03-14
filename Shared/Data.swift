@@ -17,7 +17,7 @@ struct RoronaInfo: Codable, Identifiable{
 
 class FetchUser: ObservableObject {
   // 1.
-  @Published var roronainfos = [RoronaInfo]()
+    @Published var roronainfos = [RoronaInfo]()
      
     init() {
         let url = URL(string: "http://localhost:8080/roronainfo/all")!

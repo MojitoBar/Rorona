@@ -18,7 +18,7 @@ struct CardView: View {
                 .fill(
                     LinearGradient(gradient: Gradient(colors: [colors[0], colors[1]]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
-                .frame(width: 300, height: 200)
+                .frame(width: 300, height: 150)
                 .shadow(color: colors[0], radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 .padding()
             ZStack{
@@ -32,37 +32,37 @@ struct CardView: View {
                     .padding(.init(top: -10, leading: 20, bottom: 0, trailing: 0))
             }
             .frame(width: 110, height: 110)
-            .padding(.init(top: -140, leading: -165, bottom: 0, trailing: 0))
+            .padding(.init(top: -110, leading: 200, bottom: 0, trailing: 0))
             
             VStack(alignment: .leading){
                 VStack(alignment: .leading){
                     Text(roronainfo.name)
                         .font(.custom("NanumSquareOTF_acEB", size: 35))
-                        .frame(width: 220, height: 100, alignment: .leading)
+                        .frame(width: 200, height: 100, alignment: .leading)
                         .foregroundColor(.white)
+                        .padding(.top, -30)
                 }
-                .padding(.leading, 140)
                 VStack(alignment: .leading){
                     Text(roronainfo.rule)
                         .font(.custom("NanumSquareOTF_acB", size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding(.init(top: 5, leading: 0, bottom: 10, trailing: 0))
-                    Text(roronainfo.date)
-                        .font(.custom("NanumSquareOTF_acB", size: 20))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+//                    Text(roronainfo.date)
+//                        .font(.custom("NanumSquareOTF_acB", size: 20))
+//                        .fontWeight(.bold)
+//                        .foregroundColor(.white)
                     Spacer()
                 }
-                .padding(.leading, 50)
             }
+            .frame(width: 300, height: 100, alignment: .leading)
+            .padding(.leading, 40)
         }
-        .padding(.top, 25)
+        .padding(.top, 10)
     }
 }
 
 struct ContentView: View {
-    
+    @ObservedObject var roronainfo = FetchUser()
     // db에 추가하기
     @State var Colors = [
         [Color(#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)), Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))],
@@ -77,12 +77,10 @@ struct ContentView: View {
         "party",
         "mic",
         "computer",
-        "party",
+        "coffee",
         "party",
         "party"
     ]
-    
-    @ObservedObject var roronainfo = FetchUser()
     
     var body: some View {
         ZStack{
@@ -93,7 +91,7 @@ struct ContentView: View {
                     Text("RORONA!")
                         .fontWeight(.bold)
                         .padding(.leading, 30)
-                        .font(.system(size: 30))
+                        .font(.custom("NanumSquareOTF_acB", size: 30))
                         .foregroundColor(Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)))
                     Spacer()
                     Circle()
@@ -101,7 +99,22 @@ struct ContentView: View {
                         .padding(.trailing, 30)
                         .foregroundColor(Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)))
                 }
-                NoSepratorList{
+                HStack{
+//                    Text("수도권")
+//                        .padding(.init(top: -20, leading: 20, bottom: 0, trailing: 0))
+                    Spacer()
+                    HStack(){
+                        Text("거리두기 2단계")
+                            .font(.custom("NanumSquareOTF_acB", size: 18))
+                            .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                        Text("/ ~3월 28일")
+                            .font(.custom("NanumSquareOTF_acB", size: 18))
+                            .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                    }
+                }
+                .padding()
+                
+                NoSeparatorList{
                     ForEach(roronainfo.roronainfos){roronainfo in
                         CardView(colors: Colors[roronainfo.id - 1], image: Image[roronainfo.id - 1], roronainfo: roronainfo)
                     }
@@ -112,7 +125,7 @@ struct ContentView: View {
     }
 }
 
-struct NoSepratorList<Content>: View where Content: View {
+struct NoSeparatorList<Content>: View where Content: View {
 
     let content: () -> Content
 

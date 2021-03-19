@@ -7,20 +7,43 @@
 
 import SwiftUI
 
+struct ModalView: View{
+    var roronainfo: RoronaInfo
+    var body: some View{
+        VStack {
+            Button(action: {
+                
+            }) {
+                Text(roronainfo.description)
+            }
+            .foregroundColor(.black)
+        }
+    }
+}
+
 struct CardView: View {
+    @State private var showModal = false
+    
     var colors: [Color]
     var image: String
-    let nanum = UIFont(name: "NanumSquareOTF_acB", size: 10)
     var roronainfo: RoronaInfo
+    
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 15.0)
-                .fill(
-                    LinearGradient(gradient: Gradient(colors: [colors[0], colors[1]]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
-                .frame(width: 300, height: 150)
-                .shadow(color: colors[0], radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                .padding()
+            Button(action: {
+                self.showModal = true
+            }, label: {
+                RoundedRectangle(cornerRadius: 15.0)
+                    .fill(
+                        LinearGradient(gradient: Gradient(colors: [colors[0], colors[1]]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
+                    .frame(width: 300, height: 150)
+                    .shadow(color: colors[0], radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                    .padding()
+            })
+            .sheet(isPresented: self.$showModal, content: {
+                ModalView(roronainfo: roronainfo)
+            })
             ZStack{
                 Circle()
                     .opacity(0.25)
@@ -100,8 +123,6 @@ struct ContentView: View {
                         .foregroundColor(Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)))
                 }
                 HStack{
-//                    Text("수도권")
-//                        .padding(.init(top: -20, leading: 20, bottom: 0, trailing: 0))
                     Spacer()
                     HStack(){
                         Text("거리두기 2단계")
@@ -111,8 +132,9 @@ struct ContentView: View {
                             .font(.custom("NanumSquareOTF_acB", size: 18))
                             .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                     }
+                    .padding(.horizontal)
                 }
-                .padding()
+                .padding(.horizontal)
                 
                 NoSeparatorList{
                     ForEach(roronainfo.roronainfos){roronainfo in

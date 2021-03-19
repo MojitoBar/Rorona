@@ -13,6 +13,7 @@ struct RoronaInfo: Codable, Identifiable{
     var name: String
     var rule: String
     var date: String
+    var description: String
 }
 
 class FetchUser: ObservableObject {

@@ -25,7 +25,6 @@ struct CardView: View {
     @State private var showModal = false
     
     var colors: [Color]
-    var image: String
     var roronainfo: RoronaInfo
     
     var body: some View {
@@ -49,7 +48,7 @@ struct CardView: View {
                     .opacity(0.25)
                     .blur(radius: 4)
                     .foregroundColor(Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1)))
-                Image(image)
+                Image(roronainfo.image)
                     .resizable()
                     .frame(width: 65, height: 65)
                     .padding(.init(top: -10, leading: 20, bottom: 0, trailing: 0))
@@ -96,15 +95,6 @@ struct ContentView: View {
         [Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))],
         [Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1)), Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1))]
     ]
-    @State var Image = [
-        "party",
-        "mic",
-        "computer",
-        "coffee",
-        "party",
-        "party"
-    ]
-    
     var body: some View {
         ZStack{
             Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1))
@@ -138,7 +128,7 @@ struct ContentView: View {
                 
                 NoSeparatorList{
                     ForEach(roronainfo.roronainfos){roronainfo in
-                        CardView(colors: Colors[roronainfo.id - 1], image: Image[roronainfo.id - 1], roronainfo: roronainfo)
+                        CardView(colors: Colors[roronainfo.id - 1], roronainfo: roronainfo)
                     }
                 }
             }

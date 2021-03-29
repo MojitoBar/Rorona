@@ -15,6 +15,8 @@ struct RoronaInfo: Codable, Identifiable{
     var date: String
     var description: String
     var image: String
+    var color1: String
+    var color2: String
 }
 
 class FetchUser: ObservableObject {

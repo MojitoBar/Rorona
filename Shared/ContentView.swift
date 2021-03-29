@@ -7,24 +7,28 @@
 
 import SwiftUI
 
-struct ModalView: View{
+struct ModalView: View {
     var roronainfo: RoronaInfo
-    var body: some View{
-        VStack {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10.0)
+                .fill(
+                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: roronainfo.color1), Color.init(hex: roronainfo.color2)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
+                .frame(height: UIScreen.main.bounds.size.height)
             Button(action: {
                 
             }) {
                 Text(roronainfo.description)
+                    .font(.custom("NanumSquareOTF_acEB", size: 20))
             }
-            .foregroundColor(.black)
+            .foregroundColor(.white)
         }
     }
 }
 
 struct CardView: View {
     @State private var showModal = false
-    
-    var colors: [Color]
     var roronainfo: RoronaInfo
     
     var body: some View {
@@ -34,10 +38,10 @@ struct CardView: View {
             }, label: {
                 RoundedRectangle(cornerRadius: 15.0)
                     .fill(
-                        LinearGradient(gradient: Gradient(colors: [colors[0], colors[1]]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: roronainfo.color1), Color.init(hex: roronainfo.color2)]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     )
                     .frame(width: 300, height: 150)
-                    .shadow(color: colors[0], radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                    .shadow(color: Color.init(hex: roronainfo.color1), radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                     .padding()
             })
             .sheet(isPresented: self.$showModal, content: {
@@ -69,10 +73,6 @@ struct CardView: View {
                         .font(.custom("NanumSquareOTF_acB", size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-//                    Text(roronainfo.date)
-//                        .font(.custom("NanumSquareOTF_acB", size: 20))
-//                        .fontWeight(.bold)
-//                        .foregroundColor(.white)
                     Spacer()
                 }
             }
@@ -86,15 +86,6 @@ struct CardView: View {
 struct ContentView: View {
     @ObservedObject var roronainfo = FetchUser()
     // db에 추가하기
-    @State var Colors = [
-        [Color(#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)), Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))],
-        [Color(#colorLiteral(red: 0.2386925334, green: 0.4814667995, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5587813862, green: 0.6104271209, blue: 0.9764705896, alpha: 1))],
-        [Color(#colorLiteral(red: 0.9212490338, green: 0.273721212, blue: 0.5218184406, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5301271778, blue: 0.7130295974, alpha: 1))],
-        [Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)), Color(#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))],
-        [Color(#colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)), Color(#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))],
-        [Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))],
-        [Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1)), Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1))]
-    ]
     var body: some View {
         ZStack{
             Color(#colorLiteral(red: 0.9796831018, green: 0.9796831018, blue: 0.9796831018, alpha: 1))
@@ -128,7 +119,7 @@ struct ContentView: View {
                 
                 NoSeparatorList{
                     ForEach(roronainfo.roronainfos){roronainfo in
-                        CardView(colors: Colors[roronainfo.id - 1], roronainfo: roronainfo)
+                        CardView(roronainfo: roronainfo)
                     }
                 }
             }

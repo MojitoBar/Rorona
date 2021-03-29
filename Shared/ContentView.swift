@@ -7,6 +7,43 @@
 
 import SwiftUI
 
+struct DropDown : View{
+    @State var expand = false
+    @Binding var isSudo: Bool
+    var body: some View{
+        VStack (alignment: .trailing){
+            HStack{
+                Text(isSudo ? "수도권 거리두기 2단계" : "비수도권 거리두기 1.5단계")
+                Image(systemName: expand ? "chevron.up" : "chevron.down").resizable().frame(width: 13, height: 6)
+            }.onTapGesture {
+                self.expand.toggle()
+            }
+            if expand{
+                VStack(alignment: .trailing){
+                    Button(action: {
+                        isSudo = true
+                        expand = false
+                    }, label: {
+                        Text("수도권 거리두기 2단계")
+                            .font(.custom("NanumSquareOTF_acEB", size: 15))
+                    })
+                    .padding(.vertical, 5)
+                    Button(action: {
+                        isSudo = false
+                        expand = false
+                    }, label: {
+                        Text("비수도권 거리두기 1.5단계")
+                            .font(.custom("NanumSquareOTF_acEB", size: 15))
+                    })
+                }
+                .frame(width: 204)
+                .foregroundColor(.gray)
+            }
+        }
+        .animation(.spring())
+    }
+}
+
 struct ModalView: View {
     var roronainfo: RoronaInfo
     var body: some View {
@@ -16,11 +53,14 @@ struct ModalView: View {
                     LinearGradient(gradient: Gradient(colors: [Color.init(hex: roronainfo.color1), Color.init(hex: roronainfo.color2)]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
                 .frame(height: UIScreen.main.bounds.size.height)
-            Button(action: {
-                
-            }) {
+            VStack (alignment: .leading){
+                Text("상세정보")
+                    .font(.custom("NanumSquareOTF_acEB", size: 40))
+                    .padding(.vertical, 100)
                 Text(roronainfo.description)
                     .font(.custom("NanumSquareOTF_acEB", size: 20))
+                    .frame(width: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Spacer()
             }
             .foregroundColor(.white)
         }
@@ -85,6 +125,7 @@ struct CardView: View {
 
 struct ContentView: View {
     @ObservedObject var roronainfo = FetchUser()
+    @State var isSudo = true
     // db에 추가하기
     var body: some View {
         ZStack{
@@ -92,39 +133,43 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack{
                 HStack{
-                    Text("RORONA!")
-                        .fontWeight(.bold)
-                        .padding(.leading, 30)
-                        .font(.custom("NanumSquareOTF_acB", size: 30))
-                        .foregroundColor(Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)))
+                    Button(action: {
+                        // 링크
+                        if let url = URL(string: "http://www.mohw.go.kr/react/al/sal0301vw.jsp?PAR_MENU_ID=04&MENU_ID=0403&page=1&CONT_SEQ=364260") {
+                            UIApplication.shared.open(url)
+                        }
+                    }, label: {
+                        Image(systemName: "info.circle")
+                            .resizable()
+                            .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 20)
+                            .padding(.top, 10)
+                            .foregroundColor(.gray)
+                    })
                     Spacer()
-                    Circle()
-                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding(.trailing, 30)
-                        .foregroundColor(Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)))
-                }
-                HStack{
-                    Spacer()
-                    HStack(){
-                        Text("거리두기 2단계")
-                            .font(.custom("NanumSquareOTF_acB", size: 18))
-                            .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
-                        Text("/ ~3월 28일")
-                            .font(.custom("NanumSquareOTF_acB", size: 18))
-                            .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
-                    }
-                    .padding(.horizontal)
+                    
                 }
                 .padding(.horizontal)
                 
-                NoSeparatorList{
-                    ForEach(roronainfo.roronainfos){roronainfo in
-                        CardView(roronainfo: roronainfo)
+                ZStack{
+                    DropDown(isSudo: $isSudo)
+                        .font(.custom("NanumSquareOTF_acEB", size: 20))
+                        .padding(.init(top: -420, leading: 0, bottom: 0, trailing: -140))
+                        .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .trailing)
+                    NoSeparatorList{
+                        if isSudo{
+                            ForEach(roronainfo.roronainfos){roronainfo in
+                                CardView(roronainfo: roronainfo)
+                            }
+                        }
+                        else{
+                            
+                        }
                     }
+                    .padding(.init(top: 50, leading: 0, bottom: 0, trailing: 0))
                 }
             }
         }
-        
     }
 }
 

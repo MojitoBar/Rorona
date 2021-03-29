@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B79529D2260F78DA001D3D52 /* hexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79529D1260F78DA001D3D52 /* hexColor.swift */; };
+		B79529D3260F78DA001D3D52 /* hexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79529D1260F78DA001D3D52 /* hexColor.swift */; };
 		B7AF71D425FCFFEB001C1898 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71D125FCFEC4001C1898 /* NanumSquareOTF_acB.otf */; };
 		B7AF71D725FCFFEE001C1898 /* NanumSquareOTF_acR.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71CE25FCFEC3001C1898 /* NanumSquareOTF_acR.otf */; };
 		B7AF71D825FCFFEE001C1898 /* NanumSquareOTF_acEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71CF25FCFEC4001C1898 /* NanumSquareOTF_acEB.otf */; };
@@ -24,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B79529D1260F78DA001D3D52 /* hexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexColor.swift; sourceTree = "<group>"; };
 		B7AF71CE25FCFEC3001C1898 /* NanumSquareOTF_acR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acR.otf; sourceTree = "<group>"; };
 		B7AF71CF25FCFEC4001C1898 /* NanumSquareOTF_acEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acEB.otf; sourceTree = "<group>"; };
 		B7AF71D025FCFEC4001C1898 /* NanumSquareOTF_acL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acL.otf; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */,
 				B7EF41B425FB88C100DA6ED7 /* Data.swift */,
 				B7EF41B925FB8A5500DA6ED7 /* PostList.swift */,
+				B79529D1260F78DA001D3D52 /* hexColor.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -221,6 +225,7 @@
 			files = (
 				B7EF41A425FA73AE00DA6ED7 /* ContentView.swift in Sources */,
 				B7EF41B525FB88C100DA6ED7 /* Data.swift in Sources */,
+				B79529D2260F78DA001D3D52 /* hexColor.swift in Sources */,
 				B7EF41A225FA73AE00DA6ED7 /* roronaApp.swift in Sources */,
 				B7EF41BA25FB8A5500DA6ED7 /* PostList.swift in Sources */,
 			);
@@ -232,6 +237,7 @@
 			files = (
 				B7EF41A525FA73AE00DA6ED7 /* ContentView.swift in Sources */,
 				B7EF41B625FB88C100DA6ED7 /* Data.swift in Sources */,
+				B79529D3260F78DA001D3D52 /* hexColor.swift in Sources */,
 				B7EF41A325FA73AE00DA6ED7 /* roronaApp.swift in Sources */,
 				B7EF41BB25FB8A5500DA6ED7 /* PostList.swift in Sources */,
 			);

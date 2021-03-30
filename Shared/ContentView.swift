@@ -103,7 +103,7 @@ struct CardView: View {
             VStack(alignment: .leading){
                 VStack(alignment: .leading){
                     Text(roronainfo.name)
-                        .font(.custom("NanumSquareOTF_acEB", size: 35))
+                        .font(.custom("NanumSquareOTF_acEB", size: 30))
                         .frame(width: 200, height: 100, alignment: .leading)
                         .foregroundColor(.white)
                         .padding(.top, -30)
@@ -166,7 +166,7 @@ struct ContentView: View {
                             
                         }
                     }
-                    .padding(.init(top: 50, leading: 0, bottom: 0, trailing: 0))
+                    .padding(.init(top: 60, leading: 0, bottom: 0, trailing: 0))
                 }
             }
         }

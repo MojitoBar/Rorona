@@ -19,8 +19,8 @@
 		B7EF41A525FA73AE00DA6ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF419025FA73AD00DA6ED7 /* ContentView.swift */; };
 		B7EF41A625FA73AE00DA6ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */; };
 		B7EF41A725FA73AE00DA6ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */; };
-		B7EF41B525FB88C100DA6ED7 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B425FB88C100DA6ED7 /* Data.swift */; };
-		B7EF41B625FB88C100DA6ED7 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B425FB88C100DA6ED7 /* Data.swift */; };
+		B7EF41B525FB88C100DA6ED7 /* SudoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B425FB88C100DA6ED7 /* SudoData.swift */; };
+		B7EF41B625FB88C100DA6ED7 /* SudoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B425FB88C100DA6ED7 /* SudoData.swift */; };
 		B7EF41BA25FB8A5500DA6ED7 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B925FB8A5500DA6ED7 /* PostList.swift */; };
 		B7EF41BB25FB8A5500DA6ED7 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B925FB8A5500DA6ED7 /* PostList.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 		B7EF419E25FA73AE00DA6ED7 /* rorona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rorona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7EF41A025FA73AE00DA6ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7EF41A125FA73AE00DA6ED7 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		B7EF41B425FB88C100DA6ED7 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		B7EF41B425FB88C100DA6ED7 /* SudoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudoData.swift; sourceTree = "<group>"; };
 		B7EF41B925FB8A5500DA6ED7 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 				B7EF418F25FA73AD00DA6ED7 /* roronaApp.swift */,
 				B7EF419025FA73AD00DA6ED7 /* ContentView.swift */,
 				B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */,
-				B7EF41B425FB88C100DA6ED7 /* Data.swift */,
+				B7EF41B425FB88C100DA6ED7 /* SudoData.swift */,
 				B7EF41B925FB8A5500DA6ED7 /* PostList.swift */,
 				B79529D1260F78DA001D3D52 /* hexColor.swift */,
 			);
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EF41A425FA73AE00DA6ED7 /* ContentView.swift in Sources */,
-				B7EF41B525FB88C100DA6ED7 /* Data.swift in Sources */,
+				B7EF41B525FB88C100DA6ED7 /* SudoData.swift in Sources */,
 				B79529D2260F78DA001D3D52 /* hexColor.swift in Sources */,
 				B7EF41A225FA73AE00DA6ED7 /* roronaApp.swift in Sources */,
 				B7EF41BA25FB8A5500DA6ED7 /* PostList.swift in Sources */,
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EF41A525FA73AE00DA6ED7 /* ContentView.swift in Sources */,
-				B7EF41B625FB88C100DA6ED7 /* Data.swift in Sources */,
+				B7EF41B625FB88C100DA6ED7 /* SudoData.swift in Sources */,
 				B79529D3260F78DA001D3D52 /* hexColor.swift in Sources */,
 				B7EF41A325FA73AE00DA6ED7 /* roronaApp.swift in Sources */,
 				B7EF41BB25FB8A5500DA6ED7 /* PostList.swift in Sources */,

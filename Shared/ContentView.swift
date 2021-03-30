@@ -157,13 +157,8 @@ struct ContentView: View {
                         .padding(.init(top: -420, leading: 0, bottom: 0, trailing: -140))
                         .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .trailing)
                     NoSeparatorList{
-                        if isSudo{
-                            ForEach(roronainfo.roronainfos){roronainfo in
-                                CardView(roronainfo: roronainfo)
-                            }
-                        }
-                        else{
-                            
+                        ForEach(isSudo ? roronainfo.roronainfos : roronainfo.sudoinfos){roronainfo in
+                            CardView(roronainfo: roronainfo)
                         }
                     }
                     .padding(.init(top: 60, leading: 0, bottom: 0, trailing: 0))

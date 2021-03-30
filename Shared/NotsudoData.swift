@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoronaInfo: Codable, Identifiable{
+struct notsudodata: Codable, Identifiable{
     // ?
     var id: Int
     var name: String
@@ -19,20 +19,20 @@ struct RoronaInfo: Codable, Identifiable{
     var color2: String
 }
 
-class FetchUser: ObservableObject {
+class FetchNotsudoData: ObservableObject {
   // 1.
-    @Published var roronainfos = [RoronaInfo]()
+    @Published var notsudodatas = [notsudodata]()
      
     init() {
-        let url = URL(string: "http://localhost:8080/roronainfo/all")!
+        let url = URL(string: "http://localhost:8080/notsudo/all")!
         // 2.
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             do {
                 if let userData = data {
                     // 3.
-                    let decodedData = try JSONDecoder().decode([RoronaInfo].self, from: userData)
+                    let decodedData = try JSONDecoder().decode([notsudodata].self, from: userData)
                     DispatchQueue.main.async {
-                        self.roronainfos = decodedData
+                        self.notsudodatas = decodedData
                     }
                 } else {
                     print("No data")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7209036262873E400C98A08 /* RoronaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7209035262873E400C98A08 /* RoronaInfo.swift */; };
 		B79529D2260F78DA001D3D52 /* hexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79529D1260F78DA001D3D52 /* hexColor.swift */; };
 		B79529D3260F78DA001D3D52 /* hexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79529D1260F78DA001D3D52 /* hexColor.swift */; };
 		B7AF71D425FCFFEB001C1898 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7AF71D125FCFEC4001C1898 /* NanumSquareOTF_acB.otf */; };
@@ -21,11 +22,10 @@
 		B7EF41A725FA73AE00DA6ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */; };
 		B7EF41B525FB88C100DA6ED7 /* SudoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B425FB88C100DA6ED7 /* SudoData.swift */; };
 		B7EF41B625FB88C100DA6ED7 /* SudoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B425FB88C100DA6ED7 /* SudoData.swift */; };
-		B7EF41BA25FB8A5500DA6ED7 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B925FB8A5500DA6ED7 /* PostList.swift */; };
-		B7EF41BB25FB8A5500DA6ED7 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EF41B925FB8A5500DA6ED7 /* PostList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7209035262873E400C98A08 /* RoronaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoronaInfo.swift; sourceTree = "<group>"; };
 		B79529D1260F78DA001D3D52 /* hexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexColor.swift; sourceTree = "<group>"; };
 		B7AF71CE25FCFEC3001C1898 /* NanumSquareOTF_acR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acR.otf; sourceTree = "<group>"; };
 		B7AF71CF25FCFEC4001C1898 /* NanumSquareOTF_acEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acEB.otf; sourceTree = "<group>"; };
@@ -40,7 +40,6 @@
 		B7EF41A025FA73AE00DA6ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7EF41A125FA73AE00DA6ED7 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		B7EF41B425FB88C100DA6ED7 /* SudoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudoData.swift; sourceTree = "<group>"; };
-		B7EF41B925FB8A5500DA6ED7 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +60,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7209034262873DB00C98A08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B7209035262873E400C98A08 /* RoronaInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B720903D2628744A00C98A08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B7EF41B425FB88C100DA6ED7 /* SudoData.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B7AF71CD25FCFEB8001C1898 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,11 +101,11 @@
 		B7EF418E25FA73AD00DA6ED7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B720903D2628744A00C98A08 /* ViewModel */,
+				B7209034262873DB00C98A08 /* Model */,
 				B7EF418F25FA73AD00DA6ED7 /* roronaApp.swift */,
 				B7EF419025FA73AD00DA6ED7 /* ContentView.swift */,
 				B7EF419125FA73AE00DA6ED7 /* Assets.xcassets */,
-				B7EF41B425FB88C100DA6ED7 /* SudoData.swift */,
-				B7EF41B925FB8A5500DA6ED7 /* PostList.swift */,
 				B79529D1260F78DA001D3D52 /* hexColor.swift */,
 			);
 			path = Shared;
@@ -227,7 +242,7 @@
 				B7EF41B525FB88C100DA6ED7 /* SudoData.swift in Sources */,
 				B79529D2260F78DA001D3D52 /* hexColor.swift in Sources */,
 				B7EF41A225FA73AE00DA6ED7 /* roronaApp.swift in Sources */,
-				B7EF41BA25FB8A5500DA6ED7 /* PostList.swift in Sources */,
+				B7209036262873E400C98A08 /* RoronaInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +254,6 @@
 				B7EF41B625FB88C100DA6ED7 /* SudoData.swift in Sources */,
 				B79529D3260F78DA001D3D52 /* hexColor.swift in Sources */,
 				B7EF41A325FA73AE00DA6ED7 /* roronaApp.swift in Sources */,
-				B7EF41BB25FB8A5500DA6ED7 /* PostList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 import SwiftUI
 
 extension Color {
+    // Color를 hex코드로 받았을 때 색깔을 지정해주기 위함
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0

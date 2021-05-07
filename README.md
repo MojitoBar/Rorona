@@ -4,6 +4,9 @@ Rorona developed with SwiftUI
 
 Spring Tool Suite & Mysql을 이용한 API 연동
 
+### Award
+2021 성공회대 it공모전 2등
+
 ### ScreenShots
 <img src="https://github.com/MojitoBar/Rorona/blob/main/screenshot.gif" width="250"/>
 
